@@ -27,14 +27,17 @@ p {
 	/* color: dimgray; */
 }
 
+/* a { */
+/* 	text-decoration: inherit; */
+/* 	color: var(--blue); */
+/* } */
+
 a {
-	text-decoration: inherit;
-	color: var(--blue);
+	color: black;
 }
 
 a:hover {
-	text-decoration: underline;
-	color: black;
+	color: red;
 }
 
 .nav-item {

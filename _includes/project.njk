@@ -1,0 +1,71 @@
+---
+layout: base.njk
+type: project
+---
+
+<img class="W(100%)"src="{{ main_image_path }}" alt="assembling a plinth">
+
+<h1 class="My(0.5em) Fs(i)">"{{ title }}"</h1>
+
+<p class="Fs(i) Mstart(1em) Mb(1em)">{{ client }} ({{ year }})</p>
+
+<div class="project-synopsis D(f)">
+	<div class="Miw(50%)">
+		<p class="Mb(1em)">◐ Design principles</p>
+		<div class="Pstart(1em)">
+			{% for item in principles %}
+				<p> {{ item }}</p>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="Miw(50%) Mstart(1em)">
+		<p class="Mb(1em)">◑ Design proposal</p>
+		<div class="Pstart(1em)">
+			{% for item in proposal %}
+				<p> {{ item }}</p>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+<div id="text-content" class="My(2em) D(f)">
+	{{ content | safe }}
+</div>
+
+<script>
+	let textContent = document.getElementById("text-content");
+	let contentLength = textContent.children.length
+	let columnOne = document.createElement("div");
+	let columnTwo = document.createElement("div");
+
+	console.log(Array.from(textContent.children).length)
+	console.log(Array.from(textContent.children))
+
+	if ( contentLength % 2 == 0 ) {
+		Array.from(textContent.children)
+			.slice(0 , contentLength / 2)
+			.forEach(el => {
+				columnOne.appendChild(el)
+			})
+		Array.from(textContent.children)
+			.slice(0 , contentLength)
+			.forEach(el => {
+				columnTwo.appendChild(el)
+			})
+	} else {
+		Array.from(textContent.children)
+			.slice(0 , (contentLength + 1) / 2)
+			.forEach(el => {
+				columnOne.appendChild(el)
+			})
+		Array.from(textContent.children)
+			.slice(0, contentLength - 1)
+			.forEach(el => {
+				columnTwo.appendChild(el)
+			})
+	}
+
+	textContent.innerHTML = "";
+	textContent.appendChild(columnOne);
+	textContent.appendChild(columnTwo);
+</script>

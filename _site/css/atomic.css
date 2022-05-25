@@ -31,14 +31,31 @@
 .Mx\(30px\) {
   margin-right: 30px;
 }
-.Mt\(2em\) {
+.My\(0\.5em\) {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.My\(2em\) {
   margin-top: 2em;
+  margin-bottom: 2em;
 }
 .Mt\(3em\) {
   margin-top: 3em;
 }
+.Mt\(5em\) {
+  margin-top: 5em;
+}
+.Mb\(1em\) {
+  margin-bottom: 1em;
+}
+.Mstart\(1em\) {
+  margin-left: 1em;
+}
 .Maw\(50\%\) {
   max-width: 50%;
+}
+.Miw\(50\%\) {
+  min-width: 50%;
 }
 .Py\(10px\) {
   padding-top: 10px;
@@ -50,11 +67,17 @@
 .Pb\(1em\) {
   padding-bottom: 1em;
 }
+.Pstart\(1em\) {
+  padding-left: 1em;
+}
 .Td\(n\) {
   text-decoration: none;
 }
 .Td\(u\) {
   text-decoration: underline;
+}
+.W\(100\%\) {
+  width: 100%;
 }
 .BdB {
   border-top-width: 0;

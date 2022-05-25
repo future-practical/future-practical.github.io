@@ -40,6 +40,18 @@ a:hover {
 	color: red;
 }
 
+#text-content div{
+	width: calc(50% - 1em);
+}
+
+#text-content div:last-child{
+	margin-left: 2em;
+}
+
+#text-content p{
+	padding: 0.5em 0;
+}
+
 .nav-item {
 	font-family: sans-serif;
 	display: inline-block;

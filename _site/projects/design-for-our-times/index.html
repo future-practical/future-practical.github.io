@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FUTURE PRACTICAL</title>
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/atomic.css">
+</head>
+<body class="Mx(30px)">
+	<nav class="D(f) Jc(sb) Ai(b) Py(10px)">
+		<div id="logo">
+			<h1 class="Fz(2.5em)">FUTURE PRACTICAL</h1>
+		</div>
+		<div class="D(f)">
+			<a href="/projects/design-for-our-times/"><h3>Projects</h3></a>
+			<a href="/contact/" class="Mstart(30px)"><h3>Contact</h3></a>
+		</div>
+	</nav>
+	
+<img class="W(100%)"src="/assets/modular-plinth-main.jpeg" alt="assembling a plinth">
+
+<h1 class="My(0.5em) Fs(i)">"Design for Our Times"</h1>
+
+<p class="Fs(i) Mstart(1em) Mb(1em)">V&amp;A Dundee (2022)</p>
+
+<div class="project-synopsis D(f)">
+	<div class="Miw(50%)">
+		<p class="Mb(1em)">◐ Design principles</p>
+		<div class="Pstart(1em)">
+			
+				<p> Simple construction.</p>
+			
+				<p> Reusable parts.</p>
+			
+				<p> Recyclable materials.</p>
+			
+				<p> Durable.</p>
+			
+				<p> Repairable / ease of maintenance.</p>
+			
+				<p> Modular design.</p>
+			
+				<p> Ease of storage.</p>
+			
+		</div>
+	</div>
+	<div class="Miw(50%) Mstart(1em)">
+		<p class="Mb(1em)">◑ Design proposal</p>
+		<div class="Pstart(1em)">
+			
+				<p> Standardised panels of fixed width and varying lengths.</p>
+			
+				<p> Interlocking design.</p>
+			
+				<p> Can be used in any combination to build different sized plinths to suit exhibits.</p>
+			
+				<p> Panels can be reused in a different exhibition configuration.</p>
+			
+				<p> Can be repurposed into other objects, e.g. a shelving system.</p>
+			
+		</div>
+	</div>
+</div>
+
+<div id="text-content" class="My(2em) D(f)">
+	<p>We were approached to create a set of exhibition furniture for the current
+Design for Our Times exhibition at the V&amp;A Dundee, where we had the
+opportunity to investigate exhibition design practise and in particular towards
+temporary displays and their associated impacts.</p>
+<p>Temporary exhibitions require bespoke display elements specific to the
+exhibition design and the form and dimensions of exhibits being displayed.
+These structures are often single use due to this specificity and often end up
+being chucked i a skip at the end of the show, where they are either sent to
+landfill or are incinerated. Commonly used materials are manufactured board
+such as MDF, which we know emits toxic chemicals into their surrounding
+environment.</p>
+<p>How might we make exhibition practise more responsible and sustainable?</p>
+<p>Our approach was to really focus on the use of the furniture to keep it in the
+loop of use and to change it from being single use to something that could
+either be reused in future exhibitions or repurposed as something else. Also we
+are really keen on open-sourcing the design so that it may act as a prototype
+that can be iterated upon and developed by others who may benefit from this
+concept.</p>
+<p>We wanted the design to act as a concept or fiction from a post-waste future,
+where waste isn't an option and to create a visual narrative of how that might
+look and function and in doing so designing out waste.</p>
+<p>We deconstructed the idea of the plinth made from MDF and thought about it cut
+into sections, as strips of material that could be joined together again along
+their edges using the universal fixing and assembled by a single person.</p>
+<p>This led to a modular system consisting of panels of a fixed width with various
+lengths, determined by simple multiples, allowing the sizes of the plinths to
+be scaled using any combinations of the panels. The panels could then be
+reconfigured into different size plinths in future use cases or repurposed as
+utility furniture, for example a <a href="">bookshelf</a>.</p>
+<p>The important thing for us was that the design was intuitive and simple to
+assemble and disassemble, therefore removing any future barriers in the reuse
+of the panels.</p>
+<p>The panels needed to consist of a singular material that could be easily
+recycled at the end of its use and not made of materials that can't easily be
+separated. It was also important that the plinths functioned as well as or
+better than their single-use counterparts and could easily support heavy loads,
+whilst remaining manoeuvrable.</p>
+
+</div>
+
+<script>
+	let textContent = document.getElementById("text-content");
+	let contentLength = textContent.children.length
+	let columnOne = document.createElement("div");
+	let columnTwo = document.createElement("div");
+
+	console.log(Array.from(textContent.children).length)
+	console.log(Array.from(textContent.children))
+
+	if ( contentLength % 2 == 0 ) {
+		Array.from(textContent.children)
+			.slice(0 , contentLength / 2)
+			.forEach(el => {
+				columnOne.appendChild(el)
+			})
+		Array.from(textContent.children)
+			.slice(0 , contentLength)
+			.forEach(el => {
+				columnTwo.appendChild(el)
+			})
+	} else {
+		Array.from(textContent.children)
+			.slice(0 , (contentLength + 1) / 2)
+			.forEach(el => {
+				columnOne.appendChild(el)
+			})
+		Array.from(textContent.children)
+			.slice(0, contentLength - 1)
+			.forEach(el => {
+				columnTwo.appendChild(el)
+			})
+	}
+
+	textContent.innerHTML = "";
+	textContent.appendChild(columnOne);
+	textContent.appendChild(columnTwo);
+</script>
+
+</body>
+</html>

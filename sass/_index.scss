@@ -1,0 +1,86 @@
+.mission-item {
+	margin-top: 4em;
+	height: fit-content;
+	.num {
+		padding: 0;
+		margin: 0;
+		font-style: italic;
+	}
+	.heading-background {
+		background-color: white;
+	}
+	.heading-container {
+
+		@include lg {
+			width: 100%;
+		}
+		@include xl {
+			width: calc(100% / 3) * 2;
+		}
+	}
+	.txt {
+		margin-left: 20px;
+	}
+	.content {
+		z-index: -10;
+		position: relative;
+		padding-top: 1em;
+		overflow: hidden;
+		border-bottom: 1px solid black;
+		// height: 0px;
+		transition: top 1s,  height 1s;
+		.cont-txt {
+			@include sm {
+				width: 100%;
+			}
+			@include md {
+				width: 50%;
+			}
+			@include lg {
+				width: calc(100% / 3);
+			}
+			.research-strands {
+				margin-bottom: 1em;
+				.strand-container>* {
+					padding: 0;
+					margin: 0;
+				}
+				.strand-container {
+					display: flex;
+					margin-bottom: 0.7em;
+					.strand-heading {
+						min-width: 70px;
+					}
+					.strand-content {
+						font-style: italic;
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+	.content-btn {
+		cursor: pointer;
+		text-decoration: underline;
+		font-style: italic;
+		font-weight: 600;
+	}
+	.arrow {
+		text-decoration: none;
+	}
+	.txt-lg {
+		font-size: 5em;
+		line-height: 95%;
+	}
+	h1 {
+		display: inline;
+		padding: 0;
+		margin: 0;
+		font-size: 3em;
+		font-weight: 100;
+	}
+	a {
+		font-weight: 600;
+		font-style: italic;
+	}
+}

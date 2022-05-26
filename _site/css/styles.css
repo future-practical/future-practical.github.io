@@ -1,0 +1,120 @@
+.mission-item {
+  margin-top: 4em;
+  height: fit-content;
+}
+.mission-item .num {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+}
+.mission-item .heading-background {
+  background-color: white;
+}
+@media (min-width: 960px) {
+  .mission-item .heading-container {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .mission-item .heading-container {
+    width: 66.6666666667%;
+  }
+}
+.mission-item .txt {
+  margin-left: 20px;
+}
+.mission-item .content {
+  z-index: -10;
+  position: relative;
+  padding-top: 1em;
+  overflow: hidden;
+  border-bottom: 1px solid black;
+  transition: top 1s, height 1s;
+}
+@media (min-width: 480px) {
+  .mission-item .content .cont-txt {
+    width: 100%;
+  }
+}
+@media (min-width: 720px) {
+  .mission-item .content .cont-txt {
+    width: 50%;
+  }
+}
+@media (min-width: 960px) {
+  .mission-item .content .cont-txt {
+    width: 33.3333333333%;
+  }
+}
+.mission-item .content .cont-txt .research-strands {
+  margin-bottom: 1em;
+}
+.mission-item .content .cont-txt .research-strands .strand-container > * {
+  padding: 0;
+  margin: 0;
+}
+.mission-item .content .cont-txt .research-strands .strand-container {
+  display: flex;
+  margin-bottom: 0.7em;
+}
+.mission-item .content .cont-txt .research-strands .strand-container .strand-heading {
+  min-width: 70px;
+}
+.mission-item .content .cont-txt .research-strands .strand-container .strand-content {
+  font-style: italic;
+  margin-left: 10px;
+}
+.mission-item .content-btn {
+  cursor: pointer;
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: 600;
+}
+.mission-item .arrow {
+  text-decoration: none;
+}
+.mission-item .txt-lg {
+  font-size: 5em;
+  line-height: 95%;
+}
+.mission-item h1 {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  font-size: 3em;
+  font-weight: 100;
+}
+.mission-item a {
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("/assets/fonts/HelveticaNeue/HelveticaNeueMd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  margin: 0 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 0;
+}
+nav :last-child {
+  display: flex;
+}
+nav :last-child :first-child {
+  margin-left: 1em;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,36 @@
+// base and layout
+@import 'breakpoints';
+@import 'index';
+
+// fonts
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: url('/assets/fonts/HelveticaNeue/HelveticaNeueMd.ttf')
+	format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+	margin: 0 30px;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 10px 0;
+
+	:last-child {
+		display: flex;
+		:first-child {
+			margin-left: 1em;
+		}
+	}
+}
+

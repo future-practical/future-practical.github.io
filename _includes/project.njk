@@ -5,35 +5,35 @@ type: project
 
 <img class="main-img"src="{{ main_image_path }}" alt="">
 
-<h1 class="My(0.5em) Fs(i)">"{{ title }}"</h1>
+<h1 class="title">"{{ title }}"</h1>
 
-<p class="Fs(i) Mstart(1em) Mb(1em)">{{ client }} ({{ year }})</p>
+<p class="client-year">{{ client }} ({{ year }})</p>
 
 <div class="project-synopsis D(f)">
-	<div class="Miw(50%)">
-		<p class="Mb(1em)">◐ Design principles</p>
-		<div class="Pstart(1em)">
+	<div class="container">
+		<p class="heading">◐ Design principles</p>
+		<ul>
 			{% for item in principles %}
-				<p> {{ item }}</p>
+				<li> {{ item }}</li>
 			{% endfor %}
-		</div>
+		</ul>
 	</div>
-	<div class="Miw(50%) Mstart(1em)">
-		<p class="Mb(1em)">◑ Design proposal</p>
-		<div class="Pstart(1em)">
+	<div class="container">
+		<p class="heading">◑ Design proposal</p>
+		<ul>
 			{% for item in proposal %}
-				<p> {{ item }}</p>
+				<li> {{ item }}</li>
 			{% endfor %}
-		</div>
+		</ul>
 	</div>
 </div>
 
-<div id="text-content" class="My(2em) D(f)">
+<div class="text-content">
 	{{ content | safe }}
 </div>
 
 <script>
-	let textContent = document.getElementById("text-content");
+	let textContent = document.getElementsByClassName("text-content")[0];
 	let contentLength = textContent.children.length
 	let columnOne = document.createElement("div");
 	let columnTwo = document.createElement("div");

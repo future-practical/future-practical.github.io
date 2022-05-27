@@ -10,7 +10,7 @@
 		<div id="logo">
 			<a href="/"><h1>FUTURE PRACTICAL</h1></a>
 		</div>
-		<div>
+		<div id="links">
 			<a href="/projects/design-for-our-times/"><h3>Projects</h3></a>
 			<a href="/contact/"><h3>Contact</h3></a>
 		</div>
@@ -18,50 +18,50 @@
 	
 <img class="main-img"src="/assets/modular-plinth-main.jpeg" alt="">
 
-<h1 class="My(0.5em) Fs(i)">"Design for Our Times"</h1>
+<h1 class="title">"Design for Our Times"</h1>
 
-<p class="Fs(i) Mstart(1em) Mb(1em)">V&amp;A Dundee (2022)</p>
+<p class="client-year">V&amp;A Dundee (2022)</p>
 
 <div class="project-synopsis D(f)">
-	<div class="Miw(50%)">
-		<p class="Mb(1em)">◐ Design principles</p>
-		<div class="Pstart(1em)">
+	<div class="container">
+		<p class="heading">◐ Design principles</p>
+		<ul>
 			
-				<p> Simple construction.</p>
+				<li> Simple construction.</li>
 			
-				<p> Reusable parts.</p>
+				<li> Reusable parts.</li>
 			
-				<p> Recyclable materials.</p>
+				<li> Recyclable materials.</li>
 			
-				<p> Durable.</p>
+				<li> Durable.</li>
 			
-				<p> Repairable / ease of maintenance.</p>
+				<li> Repairable / ease of maintenance.</li>
 			
-				<p> Modular design.</p>
+				<li> Modular design.</li>
 			
-				<p> Ease of storage.</p>
+				<li> Ease of storage.</li>
 			
-		</div>
+		</ul>
 	</div>
-	<div class="Miw(50%) Mstart(1em)">
-		<p class="Mb(1em)">◑ Design proposal</p>
-		<div class="Pstart(1em)">
+	<div class="container">
+		<p class="heading">◑ Design proposal</p>
+		<ul>
 			
-				<p> Standardised panels of fixed width and varying lengths.</p>
+				<li> Standardised panels of fixed width and varying lengths.</li>
 			
-				<p> Interlocking design.</p>
+				<li> Interlocking design.</li>
 			
-				<p> Can be used in any combination to build different sized plinths to suit exhibits.</p>
+				<li> Can be used in any combination to build different sized plinths to suit exhibits.</li>
 			
-				<p> Panels can be reused in a different exhibition configuration.</p>
+				<li> Panels can be reused in a different exhibition configuration.</li>
 			
-				<p> Can be repurposed into other objects, e.g. a shelving system.</p>
+				<li> Can be repurposed into other objects, e.g. a shelving system.</li>
 			
-		</div>
+		</ul>
 	</div>
 </div>
 
-<div id="text-content" class="My(2em) D(f)">
+<div class="text-content">
 	<p>We were approached to create a set of exhibition furniture for the current
 Design for Our Times exhibition at the V&amp;A Dundee, where we had the
 opportunity to investigate exhibition design practise and in particular towards
@@ -73,37 +73,46 @@ being chucked i a skip at the end of the show, where they are either sent to
 landfill or are incinerated. Commonly used materials are manufactured board
 such as MDF, which we know emits toxic chemicals into their surrounding
 environment.</p>
-<p>How might we make exhibition practise more responsible and sustainable?</p>
-<p>Our approach was to really focus on the use of the furniture to keep it in the
+<p>◆ <em>How might we make exhibition practise more responsible and sustainable?</em></p>
+<p>◇ Our approach was to really focus on the use of the furniture to keep it in the
 loop of use and to change it from being single use to something that could
 either be reused in future exhibitions or repurposed as something else. Also we
 are really keen on open-sourcing the design so that it may act as a prototype
 that can be iterated upon and developed by others who may benefit from this
 concept.</p>
-<p>We wanted the design to act as a concept or fiction from a post-waste future,
+<p>◇ We wanted the design to act as a concept or fiction from a post-waste future,
 where waste isn't an option and to create a visual narrative of how that might
 look and function and in doing so designing out waste.</p>
-<p>We deconstructed the idea of the plinth made from MDF and thought about it cut
+<p>◇ We deconstructed the idea of the plinth made from MDF and thought about it cut
 into sections, as strips of material that could be joined together again along
 their edges using the universal fixing and assembled by a single person.</p>
-<p>This led to a modular system consisting of panels of a fixed width with various
+<p>◇ This led to a modular system consisting of panels of a fixed width with various
 lengths, determined by simple multiples, allowing the sizes of the plinths to
 be scaled using any combinations of the panels. The panels could then be
 reconfigured into different size plinths in future use cases or repurposed as
 utility furniture, for example a <a href="">bookshelf</a>.</p>
-<p>The important thing for us was that the design was intuitive and simple to
+<p>◇ The important thing for us was that the design was intuitive and simple to
 assemble and disassemble, therefore removing any future barriers in the reuse
 of the panels.</p>
-<p>The panels needed to consist of a singular material that could be easily
+<p>◇ The panels needed to consist of a singular material that could be easily
 recycled at the end of its use and not made of materials that can't easily be
 separated. It was also important that the plinths functioned as well as or
 better than their single-use counterparts and could easily support heavy loads,
 whilst remaining manoeuvrable.</p>
+<p>◇ We arrived at aluminium as a potential material for its high strength and
+durability and because it recycles within our current municipal system and it
+can be recycled time and time again without loss of material properties.</p>
+<p>◇ The design of the panels had in mind ease of manufacturing using local industry
+as well as being something that could be manufactured globally by downloading
+the production files, rather than by sending the physical parts. This meant not
+using a digital manufacturing process that is highly distributed. The parts can
+be either laser cut or water jet cut to high precision with relatively low
+costs, and in this case they were laser cut locally to us in Glasgow.</p>
 
 </div>
 
 <script>
-	let textContent = document.getElementById("text-content");
+	let textContent = document.getElementsByClassName("text-content")[0];
 	let contentLength = textContent.children.length
 	let columnOne = document.createElement("div");
 	let columnTwo = document.createElement("div");

@@ -18,7 +18,16 @@
 
 body {
 	font-family: Helvetica, sans-serif;
-	margin: 0 30px;
+	margin: 1em;
+	@include md {
+		margin: 20px;
+	}
+	@include lg {
+		margin: 0 30px;
+	}
+	p {
+		line-height: 1.6;
+	}
 }
 
 nav {
@@ -28,7 +37,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	:last-child {
+	#links {
 		display: flex;
 		:first-child {
 			margin-left: 1em;

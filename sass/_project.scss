@@ -1,3 +1,61 @@
 .main-img {
 	width: 100%;
 }
+
+.title {
+	margin: 0.5em 0;
+	font-style: italic;
+	font-weight: 100;
+}
+
+.client-year {
+	font-style: italic;
+	padding-left: 1em;
+}
+
+.project-synopsis {
+	display: flex;
+	flex-direction: column;
+	@include md {
+		flex-direction: row;
+	}
+	.container {
+		@include md {
+			width: 50%;
+		}
+		.heading {
+			margin-bottom: 1em;
+		}
+		ul {
+			padding-left: 1em;
+			list-style: none;
+			li {
+				margin: 0.3em 0;
+			}
+		}
+	}
+}
+
+.text-content {
+	display: flex;
+	@include xs {
+		flex-direction: column;
+	}
+	@include md {
+		flex-direction: row;
+	}
+	margin: 2em 0;
+	div {
+		@include md {
+			width: 50%;
+		}
+	}
+	div:first-child {
+		padding-right: 1em;
+	}
+	div:last-child {
+		@include md {
+			padding-left: 1em;
+		}
+	}
+}

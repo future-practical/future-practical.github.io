@@ -22,12 +22,12 @@
 		margin-left: 20px;
 	}
 	.content {
+		display: flex;
+		align-items: flex-end;
 		z-index: -10;
 		position: relative;
-		padding-top: 1em;
 		overflow: hidden;
 		border-bottom: 1px solid black;
-		// height: 0px;
 		transition: top 1s,  height 1s;
 		.cont-txt {
 			@include sm {

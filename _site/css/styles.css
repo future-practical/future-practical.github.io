@@ -24,9 +24,10 @@
   margin-left: 20px;
 }
 .mission-item .content {
+  display: flex;
+  align-items: flex-end;
   z-index: -10;
   position: relative;
-  padding-top: 1em;
   overflow: hidden;
   border-bottom: 1px solid black;
   transition: top 1s, height 1s;
@@ -89,6 +90,10 @@
   font-style: italic;
 }
 
+.main-img {
+  width: 100%;
+}
+
 @font-face {
   font-family: "HelveticaNeue";
   src: url("/assets/fonts/HelveticaNeue/HelveticaNeueMd.ttf") format("truetype");
@@ -107,8 +112,10 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 10px 0;
+  align-items: center;
+}
+nav a {
+  text-decoration: none;
 }
 nav :last-child {
   display: flex;

@@ -8,7 +8,7 @@
 <body>
 	<nav>
 		<div id="logo">
-			<h1>FUTURE PRACTICAL</h1>
+			<a href="/"><h1>FUTURE PRACTICAL</h1></a>
 		</div>
 		<div>
 			<a href="/projects/design-for-our-times/"><h3>Projects</h3></a>
@@ -141,6 +141,7 @@
 	let isOpen = false;
 	let lastOpened = "";
 	var heights = [];
+	let paddingTop = 20;
 
 	document.querySelectorAll(".content").forEach((element) => {
 		heights.push(element.offsetHeight);
@@ -151,9 +152,9 @@
 	document.querySelectorAll(".content-btn").forEach((btn) => {
 		btn.addEventListener("click", (event) => {
 
-			let contentNum = event.target.id.split("-").pop()
-			let content = document.getElementById(`content-${contentNum}`)
-			let contentHeight = content.offsetHeight;
+			let contentNum = event.target.id.split("-").pop();
+			let content = document.getElementById(`content-${contentNum}`);
+			let contentHeight = heights[contentNum - 1];
 
 			content.classList.toggle("open");
 			if (lastOpened == "" || lastOpened == content) {
@@ -161,7 +162,7 @@
 
 				if (content.classList.contains("open")) {
 					// content.style.top = "0px";
-					content.style.height = `${heights[contentNum - 1]}px`;
+					content.style.height = `${contentHeight + paddingTop}px`;
 				} else {
 					// content.style.top = "-17px";
 					content.style.height = "0px";
@@ -169,7 +170,7 @@
 			} else {
 				lastOpened.style.height = "0px";
 				lastOpened = content;
-				content.style.height = `${heights[contentNum - 1]}px`;
+				content.style.height = `${contentHeight + paddingTop}px`;
 			}
 		})
 	})

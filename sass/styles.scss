@@ -1,6 +1,7 @@
 // base and layout
 @import 'breakpoints';
 @import 'index';
+@import 'project';
 
 // fonts
 @font-face {
@@ -21,11 +22,12 @@ body {
 }
 
 nav {
+	a {
+		text-decoration: none;
+	}
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-end;
-	padding: 10px 0;
-
+	align-items: center;
 	:last-child {
 		display: flex;
 		:first-child {

@@ -345,6 +345,48 @@ img[src*=png] {
   cursor: pointer;
 }
 
+.img-container {
+  cursor: pointer;
+}
+
+#contact-wrapper {
+  margin-top: 150px;
+}
+@media (min-width: 720px) {
+  #contact-wrapper {
+    margin-left: 80px;
+  }
+}
+
+#email {
+  font-size: 1.2em;
+}
+@media (min-width: 480px) {
+  #email {
+    font-size: 1.5em;
+  }
+}
+
+#phone {
+  margin: 2em 1em;
+}
+#phone p {
+  font-style: bold;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+#address {
+  margin: 2em 1em;
+}
+#address p {
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
 @font-face {
   font-family: "HelveticaNeue";
   src: url("/assets/fonts/HelveticaNeue/HelveticaNeueMd.ttf") format("truetype");
@@ -395,11 +437,36 @@ nav {
 nav a {
   text-decoration: none;
 }
+@media (min-width: 0) {
+  nav #logo {
+    width: 100px;
+    font-size: 0.8em;
+  }
+}
+@media (min-width: 480px) {
+  nav #logo {
+    width: fit-content;
+    font-size: 1em;
+  }
+}
 nav #links {
   display: flex;
 }
+@media (min-width: 0) {
+  nav #links {
+    font-size: 0.8em;
+  }
+}
+@media (min-width: 480px) {
+  nav #links {
+    font-size: 1em;
+  }
+}
 nav #links :first-child {
   margin-left: 1em;
+}
+nav #links a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=styles.css.map */

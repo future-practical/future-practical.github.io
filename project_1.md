@@ -1,5 +1,6 @@
 ---
 layout: project.njk
+type: project
 main_image_path: "/assets/modular-plinth-main.jpeg"
 title: Design for Our Times
 year: 2022
@@ -22,7 +23,7 @@ gallery:
   - path: /assets/illustrations/Project_VAD_A_1.png
     comment: "Modular plinth construction 1"
   - path: /assets/illustrations/Project_VAD_A_2.png
-    comment: "Modular plinth construction 3"
+    comment: "Modular plinth construction 2"
   - path: /assets/illustrations/Project_VAD_A_3.png
     comment: "Modular plinth construction 3"
   - path: /assets/illustrations/Project_VAD_A_4.png
@@ -30,7 +31,7 @@ gallery:
   - path: /assets/illustrations/Project_VAD_A_6.png
     comment: "Modular plinth essembled"
 images: 
-  - [{path: "/assets/illustrations/Project_VAD_B_1.png", comment: "hello"}, {path: "/assets/illustrations/Project_VAD_B_2.png", comment: "something"}]
+  - [{path: "/assets/illustrations/Project_VAD_B_1.png", comment: ""}, {path: "/assets/illustrations/Project_VAD_B_2.png", comment: ""}]
   - path: /assets/installation.jpeg
     comment: "installed"
 permalink: /projects/{{ title | slug }}/

@@ -2,6 +2,7 @@
 @import 'breakpoints';
 @import 'index';
 @import 'project';
+@import 'contact';
 
 // fonts
 @font-face {
@@ -47,10 +48,29 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	#logo {
+		@include xs {
+			width: 100px;
+			font-size: 0.8em;
+		}
+		@include sm {
+			width: fit-content;
+			font-size: 1em;
+		}
+	}
 	#links {
+		@include xs {
+			font-size: 0.8em;
+		}
+		@include sm {
+			font-size: 1em;
+		}
 		display: flex;
 		:first-child {
 			margin-left: 1em;
+		}
+		a:hover {
+			text-decoration: underline;
 		}
 	}
 }

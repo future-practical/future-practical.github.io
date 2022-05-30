@@ -1,0 +1,33 @@
+#contact-wrapper {
+	margin-top: 150px;
+	@include md {
+		margin-left: 80px;
+	}
+}
+
+#email {
+	font-size: 1.2em;
+	@include sm {
+		font-size: 1.5em;
+	}
+}
+
+#phone {
+	margin: 2em 1em;	
+	p {
+		font-style: bold;
+		margin: 0;
+		padding: 0;
+		line-height: 1.5;
+	}
+}
+
+#address {
+	margin: 2em 1em;
+	p {
+		font-style: italic;
+		margin: 0;
+		padding: 0;
+		line-height: 1.2;
+	}
+}

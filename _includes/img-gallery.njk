@@ -14,7 +14,7 @@
 	<div id="gallery-background" onclick="galleryOff()"></div>
 	<div id="gallery-nav">
 		<h1 onclick="prevImg()">←</h1>
-		<div class="img-container">
+		<div>
 			<img id="gallery-img">
 			<p id="gallery-comment"></p>
 		</div>
@@ -27,6 +27,10 @@
 <script id="gallery-script" data-paths="{{ allImagesString }}">
 
 	window.onscroll = () => {galleryOff()};
+
+	/* Array.from(document.getElementsByClassName("gallery-img")).forEach((container) => { */
+	/* 	console.log(container) */
+	/* }) */
 
 	let parsedImageData =
 	JSON.parse(document.getElementById("gallery-script").dataset.paths);

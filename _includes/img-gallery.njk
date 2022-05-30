@@ -1,0 +1,92 @@
+<div class="img-gallery">
+	{% for image in gallery %}
+		<div class=img-container>
+			<img class="img-content" onclick="galleryOn(`{{image.path}}`, `{{
+			image.comment }}`)" src="{{ image.path }}" alt="">
+			{% if image.comment %}
+				<p class="img-comment">{{ image.comment }}</p>
+			{% endif %}
+		</div>
+	{% endfor %}
+</div>
+
+<div id="gallery-overlay">
+	<div id="gallery-background" onclick="galleryOff()"></div>
+	<div id="gallery-nav">
+		<h1 onclick="prevImg()">←</h1>
+		<div class="img-container">
+			<img id="gallery-img">
+			<p id="gallery-comment"></p>
+		</div>
+		<h1 onclick="nextImg()">→</h1>
+	</div>
+</div>
+
+{% set allImages = gallery | concat(images) %}
+{% set allImagesString = allImages | stringify %}
+<script id="gallery-script" data-paths="{{ allImagesString }}">
+
+	window.onscroll = () => {galleryOff()};
+
+	let parsedImageData =
+	JSON.parse(document.getElementById("gallery-script").dataset.paths);
+	let allImageData = getAllImageData(parsedImageData);
+
+	function galleryOn(imgPath, imgCom) {
+		let galleryImg = document.getElementById("gallery-img");
+		let galleryComment = document.getElementById("gallery-comment");
+		document.getElementById("gallery-overlay").style.display = "block";
+		galleryImg.src = `${imgPath}`
+		galleryComment.textContent = `${imgCom}`
+	}
+
+	function galleryOff() {
+		document.getElementById("gallery-overlay").style.display = "none";
+	}
+
+	function nextImg() {
+		let currentImg = document.getElementById("gallery-img");
+		let currentComment = document.getElementById("gallery-comment");
+		let imgIndex = allImageData.findIndex(e => {
+			return e.path == currentImg.attributes.src.value;
+		});
+
+		if (imgIndex == allImageData.length - 1) {
+			currentImg.src = allImageData[0].path;
+			currentComment.textContent = allImageData[0].comment;
+		} else {
+			currentImg.src = allImageData[imgIndex + 1].path;
+			currentComment.textContent = allImageData[imgIndex + 1].comment;
+		}
+	}
+
+	function prevImg() {
+		let currentImg = document.getElementById("gallery-img");
+		let currentComment = document.getElementById("gallery-comment");
+		let imgIndex = allImageData.findIndex(e => {
+			return e.path == currentImg.attributes.src.value;
+		});
+
+		if (imgIndex == 0) {
+			currentImg.src = allImageData[allImageData.length - 1].path;
+			currentComment.textContent = allImageData[allImageData.length -
+			1].comment;
+		} else {
+			currentImg.src = allImageData[imgIndex - 1].path;
+			currentComment.textContent = allImageData[imgIndex - 1].comment;		}
+	}
+
+	function getAllImageData(parsedData) {
+		let x = []
+		for (image of parsedData) {
+			if (image.length) {
+				image.forEach(img => {
+					x.push(img)
+				})
+			} else {
+				x.push(image)
+			}
+		}
+		return x;
+	}
+</script>

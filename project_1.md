@@ -5,19 +5,32 @@ title: Design for Our Times
 year: 2022
 client: V&A Dundee
 principles:
-- Simple construction.
-- Reusable parts.
-- Recyclable materials.
-- Durable.
-- Repairable / ease of maintenance.
-- Modular design.
-- Ease of storage.
+  - Simple construction.
+  - Reusable parts.
+  - Recyclable materials.
+  - Durable.
+  - Repairable / ease of maintenance.
+  - Modular design.
+  - Ease of storage.
 proposal: 
-- Standardised panels of fixed width and varying lengths.
-- Interlocking design. 
-- Can be used in any combination to build different sized plinths to suit exhibits.
-- Panels can be reused in a different exhibition configuration.
-- Can be repurposed into other objects, e.g. a shelving system.
+  - Standardised panels of fixed width and varying lengths.
+  - Interlocking design. 
+  - Can be used in any combination to build different sized plinths to suit exhibits.
+  - Panels can be reused in a different exhibition configuration.
+  - Can be repurposed into other objects, e.g. a shelving system.
+gallery:
+  - path: /assets/illustrations/Project_VAD_A_1.png
+    comment: "Modular plinth construction 1"
+  - path: /assets/illustrations/Project_VAD_A_2.png
+    comment: "Modular plinth construction 3"
+  - path: /assets/illustrations/Project_VAD_A_3.png
+    comment: "Modular plinth construction 3"
+  - path: /assets/illustrations/Project_VAD_A_4.png
+    comment: "Modular plinth construction detail"
+  - path: /assets/illustrations/Project_VAD_A_6.png
+    comment: "Modular plinth essembled"
+images: 
+  - [{path: "/assets/illustrations/Project_VAD_B_1.png", comment: "hello"}, {path: "/assets/illustrations/Project_VAD_B_2.png", comment: "something"}]
 permalink: /projects/{{ title | slug }}/
 ---
 We were approached to create a set of exhibition furniture for the current
@@ -28,7 +41,7 @@ temporary displays and their associated impacts.
 Temporary exhibitions require bespoke display elements specific to the
 exhibition design and the form and dimensions of exhibits being displayed.
 These structures are often single use due to this specificity and often end up
-being chucked i a skip at the end of the show, where they are either sent to
+being chucked in a skip at the end of the show, where they are either sent to
 landfill or are incinerated. Commonly used materials are manufactured board
 such as MDF, which we know emits toxic chemicals into their surrounding
 environment.

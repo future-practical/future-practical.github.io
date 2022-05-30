@@ -1,3 +1,6 @@
+.page-wrapper {
+	padding-top: 1em;
+}
 .mission-item {
 	margin-top: 4em;
 	height: fit-content;
@@ -10,9 +13,8 @@
 		background-color: white;
 	}
 	.heading-container {
-
 		@include lg {
-			width: 100%;
+			width: 70%;
 		}
 		@include xl {
 			width: calc(100% / 3) * 2;
@@ -22,14 +24,14 @@
 		margin-left: 20px;
 	}
 	.content {
-		display: flex;
-		align-items: flex-end;
-		z-index: -10;
 		position: relative;
+		top: -1px;
+		z-index: -10;
 		overflow: hidden;
 		border-bottom: 1px solid black;
-		transition: top 1s,  height 1s;
+		transition: height 1s;
 		.cont-txt {
+			padding: 1em 0;
 			@include sm {
 				width: 100%;
 			}
@@ -65,6 +67,9 @@
 		font-style: italic;
 		font-weight: 600;
 	}
+	// .content-btn:hover{
+	// 	color: darkgray;
+	// }
 	.arrow {
 		text-decoration: none;
 	}
@@ -83,4 +88,8 @@
 		font-weight: 600;
 		font-style: italic;
 	}
+}
+
+.get-in-touch {
+	margin-top: 3em;
 }

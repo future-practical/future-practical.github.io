@@ -1,3 +1,7 @@
+.page-wrapper {
+  padding-top: 1em;
+}
+
 .mission-item {
   margin-top: 4em;
   height: fit-content;
@@ -12,7 +16,7 @@
 }
 @media (min-width: 960px) {
   .mission-item .heading-container {
-    width: 100%;
+    width: 70%;
   }
 }
 @media (min-width: 1200px) {
@@ -24,13 +28,15 @@
   margin-left: 20px;
 }
 .mission-item .content {
-  display: flex;
-  align-items: flex-end;
-  z-index: -10;
   position: relative;
+  top: -1px;
+  z-index: -10;
   overflow: hidden;
   border-bottom: 1px solid black;
-  transition: top 1s, height 1s;
+  transition: height 1s;
+}
+.mission-item .content .cont-txt {
+  padding: 1em 0;
 }
 @media (min-width: 480px) {
   .mission-item .content .cont-txt {
@@ -90,6 +96,15 @@
   font-style: italic;
 }
 
+.get-in-touch {
+  margin-top: 3em;
+}
+
+img[src*=png] {
+  background-color: rgb(244, 244, 244);
+  padding: 40px;
+}
+
 .main-img {
   width: 100%;
 }
@@ -106,13 +121,15 @@
 }
 
 .project-synopsis {
-  display: flex;
-  flex-direction: column;
+  margin-top: 2.5em;
 }
 @media (min-width: 720px) {
   .project-synopsis {
-    flex-direction: row;
+    display: flex;
   }
+}
+.project-synopsis .container {
+  margin-bottom: 2em;
 }
 @media (min-width: 720px) {
   .project-synopsis .container {
@@ -130,32 +147,112 @@
   margin: 0.3em 0;
 }
 
-.text-content {
+.img-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.img-gallery {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   display: flex;
-  margin: 2em 0;
+  width: 100%;
+  overflow: scroll;
 }
-@media (min-width: 0) {
-  .text-content {
-    flex-direction: column;
-  }
+.img-gallery :last-child {
+  margin: 0;
+}
+.img-gallery div {
+  margin-right: 10px;
+}
+.img-gallery div img {
+  cursor: pointer;
+  max-height: 50vh;
+}
+
+.img-comment, #gallery-comment {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 0.8em;
+}
+
+#gallery-comment {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.dbl-img-container {
+  max-height: 70vh;
+  display: flex;
+  border: 1px solid black;
+}
+.dbl-img-container :first-child {
+  margin-right: 5px;
+}
+.dbl-img-container :last-child {
+  margin-left: 5px;
+}
+.dbl-img-container .dbl-img img {
+  width: 100%;
+}
+
+.text-content {
+  z-index: -10;
+  padding: 2em 0;
 }
 @media (min-width: 720px) {
   .text-content {
-    flex-direction: row;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    position: relative;
+    column-gap: 3em;
+    max-width: 1200px;
+    margin: auto;
   }
 }
-@media (min-width: 720px) {
-  .text-content div {
-    width: 50%;
-  }
+.text-content p {
+  display: inline-block;
+  width: 100%;
 }
-.text-content div:first-child {
-  padding-right: 1em;
+
+#gallery-overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-@media (min-width: 720px) {
-  .text-content div:last-child {
-    padding-left: 1em;
-  }
+#gallery-overlay #gallery-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+#gallery-overlay #gallery-nav {
+  pointer-events: none;
+  position: fixed;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#gallery-overlay #gallery-nav img {
+  pointer-events: auto;
+  max-height: 80vh;
+  max-width: 70vw;
+}
+#gallery-overlay #gallery-nav h1 {
+  pointer-events: auto;
+  padding: 30px;
+}
+#gallery-overlay #gallery-nav h1:hover {
+  cursor: pointer;
 }
 
 @font-face {
@@ -170,16 +267,16 @@
 
 body {
   font-family: Helvetica, sans-serif;
-  margin: 1em;
+  margin: 65px 1em;
 }
 @media (min-width: 720px) {
   body {
-    margin: 20px;
+    margin: 65px 20px;
   }
 }
 @media (min-width: 960px) {
   body {
-    margin: 0 30px;
+    margin: 65px 30px;
   }
 }
 body p {
@@ -187,9 +284,23 @@ body p {
 }
 
 nav {
+  background-image: linear-gradient(rgb(255, 255, 255), 70%, rgba(255, 255, 255, 0));
+  position: fixed;
+  top: 0;
+  width: calc(100% - 2em);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (min-width: 720px) {
+  nav {
+    width: calc(100% - 40px);
+  }
+}
+@media (min-width: 960px) {
+  nav {
+    width: calc(100% - 60px);
+  }
 }
 nav a {
   text-decoration: none;

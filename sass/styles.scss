@@ -18,12 +18,12 @@
 
 body {
 	font-family: Helvetica, sans-serif;
-	margin: 1em;
+	margin: 65px 1em;
 	@include md {
-		margin: 20px;
+		margin: 65px 20px;
 	}
 	@include lg {
-		margin: 0 30px;
+		margin: 65px 30px;
 	}
 	p {
 		line-height: 1.6;
@@ -31,6 +31,16 @@ body {
 }
 
 nav {
+	background-image: linear-gradient(rgba(255,255,255,1), 70%, rgba(255,255,255,0));
+	position: fixed;
+	top: 0;
+	width: calc(100% - 2em);
+	@include md {
+		width: calc(100% - 40px);
+	}
+	@include lg {
+		width: calc(100% - 60px);
+	}
 	a {
 		text-decoration: none;
 	}

@@ -28,44 +28,46 @@ type: project
 	</div>
 </div>
 
+{% if gallery %}
+	{% include "img-gallery.njk" %}
+{% endif%}
+
 <div class="text-content">
 	{{ content | safe }}
 </div>
 
+{% for image in images %}
+		<div class="dbl-img-container">
+			{% for i in image %}	
+				<div class="dbl-img">
+					<img src="{{ i.path }}" alt="">
+					{% if i.comment %}
+						<p class="img-comment">{{ i.comment }}</p>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+		<div>
+			<img src="{{ image.path }}" alt="">
+			{% if image.comment %}
+				<p class="img-comment">{{ image.comment }}</p>
+			{% endif %}
+		</div>
+{% endfor%}
+
 <script>
-	let textContent = document.getElementsByClassName("text-content")[0];
-	let contentLength = textContent.children.length
-	let columnOne = document.createElement("div");
-	let columnTwo = document.createElement("div");
-
-	console.log(Array.from(textContent.children).length)
-	console.log(Array.from(textContent.children))
-
-	if ( contentLength % 2 == 0 ) {
-		Array.from(textContent.children)
-			.slice(0 , contentLength / 2)
-			.forEach(el => {
-				columnOne.appendChild(el)
-			})
-		Array.from(textContent.children)
-			.slice(0 , contentLength)
-			.forEach(el => {
-				columnTwo.appendChild(el)
-			})
-	} else {
-		Array.from(textContent.children)
-			.slice(0 , (contentLength + 1) / 2)
-			.forEach(el => {
-				columnOne.appendChild(el)
-			})
-		Array.from(textContent.children)
-			.slice(0, contentLength - 1)
-			.forEach(el => {
-				columnTwo.appendChild(el)
-			})
-	}
-
-	textContent.innerHTML = "";
-	textContent.appendChild(columnOne);
-	textContent.appendChild(columnTwo);
+	let dblImages = document.getElementsByClassName("dbl-img-container");
+	Array.from(dblImages).forEach(container => {
+		Array.from(container.children).forEach(imgDiv => {
+			let img = imgDiv.children[0];
+			let imgOrientation = img.naturalWidth > img.naturalHeight ? "landscape" : "portrait";
+			if (container.classList.contains(imgOrientation)) {
+				container.classList.remove(imgOrientation)
+				container.classList.add(`${imgOrientation}s`);
+			} else {
+				container.classList.add(imgOrientation);
+			}
+		})
+		console.log(container);
+	})
 </script>

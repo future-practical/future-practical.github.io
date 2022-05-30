@@ -31,6 +31,8 @@ gallery:
     comment: "Modular plinth essembled"
 images: 
   - [{path: "/assets/illustrations/Project_VAD_B_1.png", comment: "hello"}, {path: "/assets/illustrations/Project_VAD_B_2.png", comment: "something"}]
+  - path: /assets/installation.jpeg
+    comment: "installed"
 permalink: /projects/{{ title | slug }}/
 ---
 We were approached to create a set of exhibition furniture for the current

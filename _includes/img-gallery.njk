@@ -1,7 +1,7 @@
 <div class="img-gallery">
 	{% for image in gallery %}
 		<div class=img-container>
-			<img class="img-content" onclick="galleryOn(`{{image.path}}`, `{{
+			<img onclick="galleryOn(`{{image.path}}`, `{{
 			image.comment }}`)" src="{{ image.path }}" alt="">
 			{% if image.comment %}
 				<p class="img-comment">{{ image.comment }}</p>

@@ -37,22 +37,24 @@ type: project
 </div>
 
 {% for image in images %}
-		<div class="dbl-img-container">
-			{% for i in image %}	
-				<div class="dbl-img">
-					<img src="{{ i.path }}" alt="">
-					{% if i.comment %}
-						<p class="img-comment">{{ i.comment }}</p>
-					{% endif %}
-				</div>
-			{% endfor %}
-		</div>
-		<div>
-			<img src="{{ image.path }}" alt="">
-			{% if image.comment %}
-				<p class="img-comment">{{ image.comment }}</p>
-			{% endif %}
-		</div>
+	<div class="dbl-img-container">
+		{% for i in image %}	
+			<div class="dbl-img">
+				<img onclick="galleryOn(`{{i.path}}`, `{{
+			i.comment }}`)" src="{{ i.path }}" alt="">
+				{% if i.comment %}
+					<p class="img-comment">{{ i.comment }}</p>
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+	<div class="single-img-container">
+		<img class"single-img" onclick="galleryOn(`{{image.path}}`, `{{
+			image.comment }}`)" src="{{ image.path }}" alt="">
+		{% if image.comment %}
+			<p class="img-comment">{{ image.comment }}</p>
+		{% endif %}
+	</div>
 {% endfor%}
 
 <script>
@@ -61,6 +63,10 @@ type: project
 		Array.from(container.children).forEach(imgDiv => {
 			let img = imgDiv.children[0];
 			let imgOrientation = img.naturalWidth > img.naturalHeight ? "landscape" : "portrait";
+			let imgAspectRatio = (img.naturalWidth /
+				img.naturalHeight).toFixed(4);
+			imgDiv.style.flex = imgAspectRatio;
+			imgDiv.classList.add(imgOrientation)
 			if (container.classList.contains(imgOrientation)) {
 				container.classList.remove(imgOrientation)
 				container.classList.add(`${imgOrientation}s`);

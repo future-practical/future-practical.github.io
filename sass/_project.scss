@@ -1,6 +1,6 @@
 img[src*=png] {
   background-color: rgb(244, 244, 244);
-  padding: 40px;
+  // padding: 40px;
 }
 
 .main-img {
@@ -19,7 +19,7 @@ img[src*=png] {
 }
 
 .project-synopsis {
-  margin-top: 2.5em;
+  margin: 2.5em 0;
   @include md {
     display: flex;
   }
@@ -51,6 +51,7 @@ img[src*=png] {
   display: flex;
   width: 100%;
   overflow: scroll;
+  margin: 60px 0;
   :last-child {
     margin: 0;
   }
@@ -58,7 +59,19 @@ img[src*=png] {
     margin-right: 10px;
     img {
       cursor: pointer;
-      max-height: 50vh;
+      max-height: 30vh;
+      @include sm {
+        max-height: 35vh;
+      }
+      @include md {
+        max-height: 50vh;
+      }
+    }
+    p {
+      display: none;
+      @include md {
+        display: block;
+      }
     }
   }
 }
@@ -75,26 +88,68 @@ img[src*=png] {
   margin: 1em 0;
 }
 
-.dbl-img-container {
-  max-height: 70vh;
-  display: flex;
-  border: 1px solid black;
-  :first-child {
-    margin-right: 5px;
+.dbl-img-container.landscapes {
+  display: block;
+  @include lg {
+    display: flex;
+    width: 100%;
   }
-  :last-child {
-    margin-left: 5px;
+}
+
+.dbl-img-container.portraits {
+  @include sm {
+    margin: auto;
+    width: 90%;
+  }
+  @include lg {
+    width: 65%;
+  }
+}
+
+.dbl-img-container {
+    .portrait {
+      @include xs {
+        width: 70%;
+        margin: auto;
+      }
+    }
+  @include md {
+    display: flex;
+    :first-child {
+      margin-right: 10px;
+    }
+    :last-child {
+      margin-left: 10px;
+    }
+  }
+  @include lg {
+    width: 90%;
+    margin: auto;
   }
   .dbl-img {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    p {
+      margin: 0.5em 0;
+    }
     img {
       width: 100%;
+      height: auto;
+      vertical-align: middle;
     }
+  }
+}
+
+.single-img-container {
+  width: 100%;
+  img {
+    width: 100%;
   }
 }
 
 .text-content {
   z-index: -10;
-  padding: 2em 0;
+  margin: 2em 0;
   @include md {
     -moz-column-count: 2;
     -webkit-column-count: 2;
@@ -132,16 +187,32 @@ img[src*=png] {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    @include md {
+      justify-content: space-between;
+    }
+    justify-content: space-around;
     align-items: center;
     img {
       pointer-events: auto;
+      max-width: 100%;
       max-height: 80vh;
-      max-width: 70vw;
+      margin: auto;
+      @include md {
+        max-height: 80vh;
+        max-width: 70vw;
+        margin: 0;
+      }
     }
     h1 {
+      display: none;
+      font-size: 1.5em;
       pointer-events: auto;
-      padding: 30px;
+      padding: 30px 10px;
+      @include md {
+        display: block;
+        font-size: 2em;
+        padding: 30px;
+      }
     }
     h1:hover {
       cursor: pointer;

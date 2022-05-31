@@ -40,8 +40,8 @@ type: project
 	<div class="dbl-img-container">
 		{% for i in image %}	
 			<div class="img-container dbl-img">
-				<img onclick="galleryOn(`{{i.path}}`, `{{
-			i.comment }}`)" src="{{ i.path }}" alt="">
+				<img onclick="galleryOn(`{{i.path | url }}`, `{{
+			i.comment }}`)" src="{{ i.path | url }}" alt="">
 				{% if i.comment %}
 					<p class="img-comment">{{ i.comment }}</p>
 				{% endif %}
@@ -49,8 +49,8 @@ type: project
 		{% endfor %}
 	</div>
 	<div class="img-container single-img-container">
-		<img class"single-img" onclick="galleryOn(`{{image.path}}`, `{{
-			image.comment }}`)" src="{{ image.path }}" alt="">
+		<img class"single-img" onclick="galleryOn(`{{image.path | url }}`, `{{
+			image.comment }}`)" src="{{ image.path | url }}" alt="">
 		{% if image.comment %}
 			<p class="img-comment">{{ image.comment }}</p>
 		{% endif %}

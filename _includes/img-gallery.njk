@@ -1,8 +1,8 @@
 <div class="img-gallery">
 	{% for image in gallery %}
 		<div class=img-container>
-			<img onclick="galleryOn(`{{image.path}}`, `{{
-			image.comment }}`)" src="{{ image.path }}" alt="">
+			<img onclick="galleryOn(`{{image.path | url }}`, `{{
+			image.comment }}`)" src="{{ image.path | url }}" alt="">
 			{% if image.comment %}
 				<p class="img-comment">{{ image.comment }}</p>
 			{% endif %}

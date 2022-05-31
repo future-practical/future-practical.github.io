@@ -123,6 +123,11 @@
 	/* 	console.log(container) */
 	/* }) */
 
+	//IMPORTANT
+	//Pathprefix stuff for github pages
+
+	let pathprefix = "/future-practical"
+
 	let parsedImageData =
 	JSON.parse(document.getElementById("gallery-script").dataset.paths);
 	let allImageData = getAllImageData(parsedImageData);
@@ -131,8 +136,8 @@
 		let galleryImg = document.getElementById("gallery-img");
 		let galleryComment = document.getElementById("gallery-comment");
 		document.getElementById("gallery-overlay").style.display = "block";
-		galleryImg.src = `${imgPath}`
-		galleryComment.textContent = `${imgCom}`
+		galleryImg.src = imgPath;
+		galleryComment.textContent = imgCom;
 	}
 
 	function galleryOff() {
@@ -176,9 +181,11 @@
 		for (image of parsedData) {
 			if (image.length) {
 				image.forEach(img => {
+					/* img.path = pathprefix + img.path; */
 					x.push(img)
 				})
 			} else {
+				/* img.path = pathprefix + img.path; */
 				x.push(image)
 			}
 		}
@@ -253,7 +260,7 @@ costs, and in this case they were laser cut locally to us in Glasgow.</p>
 		
 	</div>
 	<div class="img-container single-img-container">
-		<img class"single-img" onclick="galleryOn(``, ``)" src="" alt="">
+		<img class"single-img" onclick="galleryOn(`.`, ``)" src="." alt="">
 		
 	</div>
 

@@ -32,6 +32,11 @@
 	/* 	console.log(container) */
 	/* }) */
 
+	//IMPORTANT
+	//Pathprefix stuff for github pages
+
+	let pathprefix = "/future-practical"
+
 	let parsedImageData =
 	JSON.parse(document.getElementById("gallery-script").dataset.paths);
 	let allImageData = getAllImageData(parsedImageData);
@@ -85,9 +90,11 @@
 		for (image of parsedData) {
 			if (image.length) {
 				image.forEach(img => {
+					img.path = pathprefix + img.path;
 					x.push(img)
 				})
 			} else {
+				img.path = pathprefix + img.path;
 				x.push(image)
 			}
 		}

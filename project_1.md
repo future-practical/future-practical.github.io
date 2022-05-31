@@ -20,19 +20,19 @@ proposal:
   - Panels can be reused in a different exhibition configuration.
   - Can be repurposed into other objects, e.g. a shelving system.
 gallery:
-  - path: /assets/illustrations/Project_VAD_A_1.png
+  - path: {{ '/assets/illustrations/Project_VAD_A_1.png' | url }}
     comment: "Modular plinth construction 1"
-  - path: /assets/illustrations/Project_VAD_A_2.png
+  - path: {{ '/assets/illustrations/Project_VAD_A_2.png' | url}}
     comment: "Modular plinth construction 2"
-  - path: /assets/illustrations/Project_VAD_A_3.png
+  - path: {{ '/assets/illustrations/Project_VAD_A_3.png' | url}}
     comment: "Modular plinth construction 3"
-  - path: /assets/illustrations/Project_VAD_A_4.png
+  - path: {{ '/assets/illustrations/Project_VAD_A_4.png' | url}}
     comment: "Modular plinth construction detail"
-  - path: /assets/illustrations/Project_VAD_A_6.png
+  - path: {{ '/assets/illustrations/Project_VAD_A_6.png' | url}}
     comment: "Modular plinth essembled"
 images: 
-  - [{path: "/assets/illustrations/Project_VAD_B_1.png", comment: ""}, {path: "/assets/illustrations/Project_VAD_B_2.png", comment: ""}]
-  - path: /assets/installation.jpeg
+  - [{path: {{ "/assets/illustrations/Project_VAD_B_1.png" | url }}, comment: ""}, {path: {{ "/assets/illustrations/Project_VAD_B_2.png" | url }}, comment: ""}]
+  - path: {{ '/assets/installation.jpeg' | url }}
     comment: "installed"
 permalink: /projects/{{ title | slug }}/
 ---

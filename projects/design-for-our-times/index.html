@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FUTURE PRACTICAL</title>
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+	<nav>
+		<div id="logo">
+			<a href="/"><h1>FUTURE PRACTICAL</h1></a>
+		</div>
+		<div id="links">
+			<a href="/projects/design-for-our-times"><h3>Projects</h3></a>
+			<a href="/contact"><h3>Contact</h3></a>
+		</div>
+	</nav>
+	
+<img class="main-img"src="/assets/modular-plinth-main.jpeg" alt="">
+
+<h1 class="title">"Design for Our Times"</h1>
+
+<p class="client-year">V&amp;A Dundee (2022)</p>
+
+<div class="project-synopsis D(f)">
+	<div class="container">
+		<p class="heading">◐ Design principles</p>
+		<ul>
+			
+				<li> Simple construction.</li>
+			
+				<li> Reusable parts.</li>
+			
+				<li> Recyclable materials.</li>
+			
+				<li> Durable.</li>
+			
+				<li> Repairable / ease of maintenance.</li>
+			
+				<li> Modular design.</li>
+			
+				<li> Ease of storage.</li>
+			
+		</ul>
+	</div>
+	<div class="container">
+		<p class="heading">◑ Design proposal</p>
+		<ul>
+			
+				<li> Standardised panels of fixed width and varying lengths.</li>
+			
+				<li> Interlocking design.</li>
+			
+				<li> Can be used in any combination to build different sized plinths to suit exhibits.</li>
+			
+				<li> Panels can be reused in a different exhibition configuration.</li>
+			
+				<li> Can be repurposed into other objects, e.g. a shelving system.</li>
+			
+		</ul>
+	</div>
+</div>
+
+
+	<div class="img-gallery">
+	
+		<div class=img-container>
+			<img onclick="galleryOn(`/assets/illustrations/Project_VAD_A_1.png`, `Modular plinth construction 1`)" src="/assets/illustrations/Project_VAD_A_1.png" alt="">
+			
+				<p class="img-comment">Modular plinth construction 1</p>
+			
+		</div>
+	
+		<div class=img-container>
+			<img onclick="galleryOn(`/assets/illustrations/Project_VAD_A_2.png`, `Modular plinth construction 2`)" src="/assets/illustrations/Project_VAD_A_2.png" alt="">
+			
+				<p class="img-comment">Modular plinth construction 2</p>
+			
+		</div>
+	
+		<div class=img-container>
+			<img onclick="galleryOn(`/assets/illustrations/Project_VAD_A_3.png`, `Modular plinth construction 3`)" src="/assets/illustrations/Project_VAD_A_3.png" alt="">
+			
+				<p class="img-comment">Modular plinth construction 3</p>
+			
+		</div>
+	
+		<div class=img-container>
+			<img onclick="galleryOn(`/assets/illustrations/Project_VAD_A_4.png`, `Modular plinth construction detail`)" src="/assets/illustrations/Project_VAD_A_4.png" alt="">
+			
+				<p class="img-comment">Modular plinth construction detail</p>
+			
+		</div>
+	
+		<div class=img-container>
+			<img onclick="galleryOn(`/assets/illustrations/Project_VAD_A_6.png`, `Modular plinth essembled`)" src="/assets/illustrations/Project_VAD_A_6.png" alt="">
+			
+				<p class="img-comment">Modular plinth essembled</p>
+			
+		</div>
+	
+</div>
+
+<div id="gallery-overlay">
+	<div id="gallery-background" onclick="galleryOff()"></div>
+	<div id="gallery-nav">
+		<h1 onclick="prevImg()">←</h1>
+		<div>
+			<img id="gallery-img">
+			<p id="gallery-comment"></p>
+		</div>
+		<h1 onclick="nextImg()">→</h1>
+	</div>
+</div>
+
+
+
+<script id="gallery-script" data-paths="[{&quot;path&quot;:&quot;/assets/illustrations/Project_VAD_A_1.png&quot;,&quot;comment&quot;:&quot;Modular plinth construction 1&quot;},{&quot;path&quot;:&quot;/assets/illustrations/Project_VAD_A_2.png&quot;,&quot;comment&quot;:&quot;Modular plinth construction 2&quot;},{&quot;path&quot;:&quot;/assets/illustrations/Project_VAD_A_3.png&quot;,&quot;comment&quot;:&quot;Modular plinth construction 3&quot;},{&quot;path&quot;:&quot;/assets/illustrations/Project_VAD_A_4.png&quot;,&quot;comment&quot;:&quot;Modular plinth construction detail&quot;},{&quot;path&quot;:&quot;/assets/illustrations/Project_VAD_A_6.png&quot;,&quot;comment&quot;:&quot;Modular plinth essembled&quot;},[{&quot;path&quot;:&quot;/assets/illustrations/Project_VAD_B_1.png&quot;,&quot;comment&quot;:&quot;&quot;},{&quot;path&quot;:&quot;/assets/illustrations/Project_VAD_B_2.png&quot;,&quot;comment&quot;:&quot;&quot;}],{&quot;path&quot;:&quot;/assets/installation.jpeg&quot;,&quot;comment&quot;:&quot;installed&quot;}]">
+
+	window.onscroll = () => {galleryOff()};
+
+	/* Array.from(document.getElementsByClassName("gallery-img")).forEach((container) => { */
+	/* 	console.log(container) */
+	/* }) */
+
+	let parsedImageData =
+	JSON.parse(document.getElementById("gallery-script").dataset.paths);
+	let allImageData = getAllImageData(parsedImageData);
+
+	function galleryOn(imgPath, imgCom) {
+		let galleryImg = document.getElementById("gallery-img");
+		let galleryComment = document.getElementById("gallery-comment");
+		document.getElementById("gallery-overlay").style.display = "block";
+		galleryImg.src = `${imgPath}`
+		galleryComment.textContent = `${imgCom}`
+	}
+
+	function galleryOff() {
+		document.getElementById("gallery-overlay").style.display = "none";
+	}
+
+	function nextImg() {
+		let currentImg = document.getElementById("gallery-img");
+		let currentComment = document.getElementById("gallery-comment");
+		let imgIndex = allImageData.findIndex(e => {
+			return e.path == currentImg.attributes.src.value;
+		});
+
+		if (imgIndex == allImageData.length - 1) {
+			currentImg.src = allImageData[0].path;
+			currentComment.textContent = allImageData[0].comment;
+		} else {
+			currentImg.src = allImageData[imgIndex + 1].path;
+			currentComment.textContent = allImageData[imgIndex + 1].comment;
+		}
+	}
+
+	function prevImg() {
+		let currentImg = document.getElementById("gallery-img");
+		let currentComment = document.getElementById("gallery-comment");
+		let imgIndex = allImageData.findIndex(e => {
+			return e.path == currentImg.attributes.src.value;
+		});
+
+		if (imgIndex == 0) {
+			currentImg.src = allImageData[allImageData.length - 1].path;
+			currentComment.textContent = allImageData[allImageData.length -
+			1].comment;
+		} else {
+			currentImg.src = allImageData[imgIndex - 1].path;
+			currentComment.textContent = allImageData[imgIndex - 1].comment;		}
+	}
+
+	function getAllImageData(parsedData) {
+		let x = []
+		for (image of parsedData) {
+			if (image.length) {
+				image.forEach(img => {
+					x.push(img)
+				})
+			} else {
+				x.push(image)
+			}
+		}
+		return x;
+	}
+</script>
+
+
+
+<div class="text-content">
+	<p>We were approached to create a set of exhibition furniture for the current
+Design for Our Times exhibition at the V&amp;A Dundee, where we had the
+opportunity to investigate exhibition design practise and in particular towards
+temporary displays and their associated impacts.</p>
+<p>Temporary exhibitions require bespoke display elements specific to the
+exhibition design and the form and dimensions of exhibits being displayed.
+These structures are often single use due to this specificity and often end up
+being chucked in a skip at the end of the show, where they are either sent to
+landfill or are incinerated. Commonly used materials are manufactured board
+such as MDF, which we know emits toxic chemicals into their surrounding
+environment.</p>
+<p>◆ <em>How might we make exhibition practise more responsible and sustainable?</em></p>
+<p>◇ Our approach was to really focus on the use of the furniture to keep it in the
+loop of use and to change it from being single use to something that could
+either be reused in future exhibitions or repurposed as something else. Also we
+are really keen on open-sourcing the design so that it may act as a prototype
+that can be iterated upon and developed by others who may benefit from this
+concept.</p>
+<p>◇ We wanted the design to act as a concept or fiction from a post-waste future,
+where waste isn't an option and to create a visual narrative of how that might
+look and function and in doing so designing out waste.</p>
+<p>◇ We deconstructed the idea of the plinth made from MDF and thought about it cut
+into sections, as strips of material that could be joined together again along
+their edges using the universal fixing and assembled by a single person.</p>
+<p>◇ This led to a modular system consisting of panels of a fixed width with various
+lengths, determined by simple multiples, allowing the sizes of the plinths to
+be scaled using any combinations of the panels. The panels could then be
+reconfigured into different size plinths in future use cases or repurposed as
+utility furniture, for example a <a href="">bookshelf</a>.</p>
+<p>◇ The important thing for us was that the design was intuitive and simple to
+assemble and disassemble, therefore removing any future barriers in the reuse
+of the panels.</p>
+<p>◇ The panels needed to consist of a singular material that could be easily
+recycled at the end of its use and not made of materials that can't easily be
+separated. It was also important that the plinths functioned as well as or
+better than their single-use counterparts and could easily support heavy loads,
+whilst remaining manoeuvrable.</p>
+<p>◇ We arrived at aluminium as a potential material for its high strength and
+durability and because it recycles within our current municipal system and it
+can be recycled time and time again without loss of material properties.</p>
+<p>◇ The design of the panels had in mind ease of manufacturing using local industry
+as well as being something that could be manufactured globally by downloading
+the production files, rather than by sending the physical parts. This meant not
+using a digital manufacturing process that is highly distributed. The parts can
+be either laser cut or water jet cut to high precision with relatively low
+costs, and in this case they were laser cut locally to us in Glasgow.</p>
+
+</div>
+
+
+	<div class="dbl-img-container">
+			
+			<div class="img-container dbl-img">
+				<img onclick="galleryOn(`/assets/illustrations/Project_VAD_B_1.png`, ``)" src="/assets/illustrations/Project_VAD_B_1.png" alt="">
+				
+			</div>
+			
+			<div class="img-container dbl-img">
+				<img onclick="galleryOn(`/assets/illustrations/Project_VAD_B_2.png`, ``)" src="/assets/illustrations/Project_VAD_B_2.png" alt="">
+				
+			</div>
+		
+	</div>
+	<div class="img-container single-img-container">
+		<img class"single-img" onclick="galleryOn(``, ``)" src="" alt="">
+		
+	</div>
+
+	<div class="dbl-img-container">
+		
+	</div>
+	<div class="img-container single-img-container">
+		<img class"single-img" onclick="galleryOn(`/assets/installation.jpeg`, `installed`)" src="/assets/installation.jpeg" alt="">
+		
+			<p class="img-comment">installed</p>
+		
+	</div>
+
+
+<script>
+	let dblImages = document.getElementsByClassName("dbl-img-container");
+	Array.from(dblImages).forEach(container => {
+		Array.from(container.children).forEach(imgDiv => {
+			let img = imgDiv.children[0];
+			let imgOrientation = img.naturalWidth > img.naturalHeight ? "landscape" : "portrait";
+			let imgAspectRatio = (img.naturalWidth /
+				img.naturalHeight).toFixed(4);
+			imgDiv.style.flex = imgAspectRatio;
+			imgDiv.classList.add(imgOrientation)
+			if (container.classList.contains(imgOrientation)) {
+				container.classList.remove(imgOrientation)
+				container.classList.add(`${imgOrientation}s`);
+			} else {
+				container.classList.add(imgOrientation);
+			}
+		})
+		console.log(container);
+	})
+</script>
+
+</body>
+</html>

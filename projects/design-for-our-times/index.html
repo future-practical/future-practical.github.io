@@ -16,7 +16,7 @@
 		</div>
 	</nav>
 	
-<img class="main-img"src="/assets/modular-plinth-main.jpeg" alt="">
+<img class="main-img"src="/future-practical/assets/modular-plinth-main.jpeg" alt="">
 
 <h1 class="title">"Design for Our Times"</h1>
 
@@ -127,12 +127,16 @@
 	JSON.parse(document.getElementById("gallery-script").dataset.paths);
 	let allImageData = getAllImageData(parsedImageData);
 
+	// turn off for dev environment 
+	// only used for github pages 
+	let pathPrefix = "future-practical"
+
 	function galleryOn(imgPath, imgCom) {
 		let galleryImg = document.getElementById("gallery-img");
 		let galleryComment = document.getElementById("gallery-comment");
 		document.getElementById("gallery-overlay").style.display = "block";
-		galleryImg.src = `${imgPath}`
-		galleryComment.textContent = `${imgCom}`
+		galleryImg.src = pathPrefix + imgPath;
+		galleryComment.textContent = imgCom;
 	}
 
 	function galleryOff() {
@@ -147,10 +151,10 @@
 		});
 
 		if (imgIndex == allImageData.length - 1) {
-			currentImg.src = allImageData[0].path;
+			currentImg.src = pathPrefix + allImageData[0].path;
 			currentComment.textContent = allImageData[0].comment;
 		} else {
-			currentImg.src = allImageData[imgIndex + 1].path;
+			currentImg.src = pathPrefix + allImageData[imgIndex + 1].path;
 			currentComment.textContent = allImageData[imgIndex + 1].comment;
 		}
 	}
@@ -163,11 +167,11 @@
 		});
 
 		if (imgIndex == 0) {
-			currentImg.src = allImageData[allImageData.length - 1].path;
+			currentImg.src = pathPrefix + allImageData[allImageData.length - 1].path;
 			currentComment.textContent = allImageData[allImageData.length -
 			1].comment;
 		} else {
-			currentImg.src = allImageData[imgIndex - 1].path;
+			currentImg.src = pathPrefix + allImageData[imgIndex - 1].path;
 			currentComment.textContent = allImageData[imgIndex - 1].comment;		}
 	}
 

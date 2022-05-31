@@ -20,9 +20,9 @@ proposal:
   - Panels can be reused in a different exhibition configuration.
   - Can be repurposed into other objects, e.g. a shelving system.
 gallery:
-  - path: {{'/assets/illustrations/Project_VAD_A_1.png' | url }}
+  - path: /assets/illustrations/Project_VAD_A_1.png
     comment: "Modular plinth construction 1"
-  - path: {{'/assets/illustrations/Project_VAD_A_1.png' | url }}
+  - path: /assets/illustrations/Project_VAD_A_2.png
     comment: "Modular plinth construction 2"
   - path: /assets/illustrations/Project_VAD_A_3.png
     comment: "Modular plinth construction 3"

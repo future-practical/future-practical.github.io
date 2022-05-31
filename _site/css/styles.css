@@ -81,19 +81,33 @@
   text-decoration: none;
 }
 .mission-item .txt-lg {
-  font-size: 5em;
   line-height: 95%;
+}
+@media (min-width: 0) {
+  .mission-item .txt-lg {
+    font-size: 3em;
+  }
+}
+@media (min-width: 720px) {
+  .mission-item .txt-lg {
+    font-size: 5em;
+  }
 }
 .mission-item h1 {
   display: inline;
   padding: 0;
   margin: 0;
-  font-size: 3em;
   font-weight: 100;
 }
-.mission-item a {
-  font-weight: 600;
-  font-style: italic;
+@media (min-width: 0) {
+  .mission-item h1 {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 720px) {
+  .mission-item h1 {
+    font-size: 3em;
+  }
 }
 
 .get-in-touch {
@@ -109,14 +123,35 @@ img[src*=png] {
 }
 
 .title {
-  margin: 0.5em 0;
   font-style: italic;
   font-weight: 100;
+}
+@media (min-width: 0) {
+  .title {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 720px) {
+  .title {
+    font-size: 2em;
+  }
 }
 
 .client-year {
   font-style: italic;
   padding-left: 1em;
+}
+@media (min-width: 0) {
+  .client-year {
+    margin: -1em 0;
+    font-size: 0.8em;
+  }
+}
+@media (min-width: 720px) {
+  .client-year {
+    font-size: 1em;
+    margin: 0;
+  }
 }
 
 .project-synopsis {
@@ -156,7 +191,16 @@ img[src*=png] {
   display: flex;
   width: 100%;
   overflow: scroll;
-  margin: 60px 0;
+}
+@media (min-width: 0) {
+  .img-gallery {
+    margin: 30px 0;
+  }
+}
+@media (min-width: 720px) {
+  .img-gallery {
+    margin: 60px 0;
+  }
 }
 .img-gallery :last-child {
   margin: 0;
@@ -266,7 +310,11 @@ img[src*=png] {
 
 .text-content {
   z-index: -10;
-  margin: 2em 0;
+}
+@media (min-width: 0) {
+  .text-content {
+    margin: 0;
+  }
 }
 @media (min-width: 720px) {
   .text-content {
@@ -276,7 +324,7 @@ img[src*=png] {
     position: relative;
     column-gap: 3em;
     max-width: 1200px;
-    margin: auto;
+    margin: 2em auto;
   }
 }
 .text-content p {

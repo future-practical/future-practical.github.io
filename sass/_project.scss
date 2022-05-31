@@ -8,12 +8,25 @@ img[src*=png] {
 }
 
 .title {
-  margin: 0.5em 0;
+  @include xs {
+    font-size: 1.5em;
+  }
+  @include md {
+    font-size: 2em;
+  }
   font-style: italic;
   font-weight: 100;
 }
 
 .client-year {
+  @include xs {
+    margin: -1em 0;
+    font-size: 0.8em;
+  }
+  @include md {
+    font-size: 1em;
+    margin: 0;
+  }
   font-style: italic;
   padding-left: 1em;
 }
@@ -51,7 +64,12 @@ img[src*=png] {
   display: flex;
   width: 100%;
   overflow: scroll;
-  margin: 60px 0;
+  @include xs {
+    margin: 30px 0;
+  }
+  @include md {
+    margin: 60px 0;
+  }
   :last-child {
     margin: 0;
   }
@@ -149,7 +167,9 @@ img[src*=png] {
 
 .text-content {
   z-index: -10;
-  margin: 2em 0;
+  @include xs {
+    margin: 0;
+  }
   @include md {
     -moz-column-count: 2;
     -webkit-column-count: 2;
@@ -157,7 +177,7 @@ img[src*=png] {
     position: relative;
     column-gap: 3em;
     max-width: 1200px;
-    margin: auto;
+    margin: 2em auto;
   }
   p {
     display: inline-block;

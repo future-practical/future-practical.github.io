@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>FUTURE PRACTICAL</title>
 	<link rel="stylesheet" href="/css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<nav>
@@ -181,11 +182,11 @@
 		for (image of parsedData) {
 			if (image.length) {
 				image.forEach(img => {
-					/* img.path = pathprefix + img.path; */
+					img.path = pathprefix + img.path;
 					x.push(img)
 				})
 			} else {
-				/* img.path = pathprefix + img.path; */
+				image.path = pathprefix + image.path;
 				x.push(image)
 			}
 		}

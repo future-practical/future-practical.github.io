@@ -141,13 +141,23 @@
 
 
 <script>
-	window.onresize = () => {window.location.reload(false)};
-
 	let isOpen = false;
 	let lastOpened = "";
 	var heights = [];
+	
+	const resize_ob = new ResizeObserver((entries) => {
+		heights = [];
+		for(el of entries) {
+			el.target.offsetParent.style.height = "0px";
+			heights.push(el.borderBoxSize[0].blockSize)
+		}
+	})
 
-	 document.querySelectorAll(".content").forEach((element) => {
+	Array.from(document.getElementsByClassName("cont-txt")).forEach((el) => {
+		resize_ob.observe(el);
+	}) 
+
+	document.querySelectorAll(".content").forEach((element) => {
 		heights.push(element.offsetHeight);
 		element.style.height = "0px"
 		// element.style.top = `-${element.offsetHeight}px`;

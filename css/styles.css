@@ -246,7 +246,7 @@ img[src*=png] {
 
 @media (min-width: 720px) {
   .dbl-img-container.landscapes {
-    width: 100%;
+    width: 80%;
   }
 }
 
@@ -262,9 +262,13 @@ img[src*=png] {
 .dbl-img-container {
   margin: 3em auto;
 }
-@media (min-width: 480px) {
+@media (min-width: 0) {
   .dbl-img-container .portrait {
     width: 60%;
+    margin: 3em auto;
+  }
+  .dbl-img-container .landscape {
+    width: 80%;
     margin: 3em auto;
   }
 }
@@ -294,7 +298,7 @@ img[src*=png] {
 }
 
 .single-img-container {
-  margin: 3em 0;
+  margin: 4em 0;
   width: 100%;
 }
 .single-img-container img {

@@ -40,6 +40,7 @@ img[src*=png] {
     margin-bottom: 2em;
     @include md {
       width: 50%;
+      margin-bottom: 0;
     }
     .heading {
       margin-bottom: 1em;
@@ -65,7 +66,7 @@ img[src*=png] {
   width: 100%;
   overflow: scroll;
   @include xs {
-    margin: 30px 0;
+    margin: 50px 0 40px 0;
   }
   @include md {
     margin: 60px 0;
@@ -107,58 +108,52 @@ img[src*=png] {
 }
 
 .dbl-img-container.landscapes {
-  display: block;
-  @include lg {
-    display: flex;
+  @include md {
     width: 100%;
   }
 }
 
 .dbl-img-container.portraits {
-  @include sm {
-    margin: auto;
-    width: 90%;
-  }
   @include lg {
-    width: 65%;
+    width: 70%;
+    :first-child {
+      margin-right: 50px;
+    }
   }
 }
 
 .dbl-img-container {
+  margin: 3em auto;
+  @include sm {
     .portrait {
-      @include xs {
-        width: 70%;
-        margin: auto;
-      }
+      width: 60%;
+      margin: 3em auto;
     }
+  }
   @include md {
+    margin: -2em auto;
     display: flex;
     :first-child {
-      margin-right: 10px;
-    }
-    :last-child {
-      margin-left: 10px;
+      margin-right: 20px;
     }
   }
   @include lg {
-    width: 90%;
-    margin: auto;
+    width: 80%;
   }
-  .dbl-img {
-    margin-top: 3em;
-    margin-bottom: 3em;
-    p {
-      margin: 0.5em 0;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      vertical-align: middle;
-    }
+}
+
+.dbl-img {
+  margin: 3em 0;
+  p {
+    margin: 0.5em 0;
+  }
+  img {
+    width: 100%;
   }
 }
 
 .single-img-container {
+  margin: 3em 0;
   width: 100%;
   img {
     width: 100%;

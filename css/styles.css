@@ -168,6 +168,7 @@ img[src*=png] {
 @media (min-width: 720px) {
   .project-synopsis .container {
     width: 50%;
+    margin-bottom: 0;
   }
 }
 .project-synopsis .container .heading {
@@ -194,7 +195,7 @@ img[src*=png] {
 }
 @media (min-width: 0) {
   .img-gallery {
-    margin: 30px 0;
+    margin: 50px 0 40px 0;
   }
 }
 @media (min-width: 720px) {
@@ -243,65 +244,57 @@ img[src*=png] {
   margin: 1em 0;
 }
 
-.dbl-img-container.landscapes {
-  display: block;
-}
-@media (min-width: 960px) {
+@media (min-width: 720px) {
   .dbl-img-container.landscapes {
-    display: flex;
     width: 100%;
   }
 }
 
-@media (min-width: 480px) {
-  .dbl-img-container.portraits {
-    margin: auto;
-    width: 90%;
-  }
-}
 @media (min-width: 960px) {
   .dbl-img-container.portraits {
-    width: 65%;
+    width: 70%;
+  }
+  .dbl-img-container.portraits :first-child {
+    margin-right: 50px;
   }
 }
 
-@media (min-width: 0) {
+.dbl-img-container {
+  margin: 3em auto;
+}
+@media (min-width: 480px) {
   .dbl-img-container .portrait {
-    width: 70%;
-    margin: auto;
+    width: 60%;
+    margin: 3em auto;
   }
 }
 @media (min-width: 720px) {
   .dbl-img-container {
+    margin: -2em auto;
     display: flex;
   }
   .dbl-img-container :first-child {
-    margin-right: 10px;
-  }
-  .dbl-img-container :last-child {
-    margin-left: 10px;
+    margin-right: 20px;
   }
 }
 @media (min-width: 960px) {
   .dbl-img-container {
-    width: 90%;
-    margin: auto;
+    width: 80%;
   }
 }
-.dbl-img-container .dbl-img {
-  margin-top: 3em;
-  margin-bottom: 3em;
+
+.dbl-img {
+  margin: 3em 0;
 }
-.dbl-img-container .dbl-img p {
+.dbl-img p {
   margin: 0.5em 0;
 }
-.dbl-img-container .dbl-img img {
+.dbl-img img {
   width: 100%;
-  height: auto;
-  vertical-align: middle;
 }
 
 .single-img-container {
+  margin: 3em 0;
   width: 100%;
 }
 .single-img-container img {
@@ -456,7 +449,7 @@ body {
 }
 @media (min-width: 960px) {
   body {
-    margin: 65px 30px;
+    margin: 65px 40px;
   }
 }
 body p {
@@ -479,7 +472,7 @@ nav {
 }
 @media (min-width: 960px) {
   nav {
-    width: calc(100% - 60px);
+    width: calc(100% - 80px);
   }
 }
 nav a {

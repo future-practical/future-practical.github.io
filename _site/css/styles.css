@@ -268,22 +268,18 @@ img[src*=png] {
     margin: 3em auto;
   }
   .dbl-img-container .landscape {
-    width: 80%;
+    width: 90%;
     margin: 3em auto;
   }
 }
 @media (min-width: 720px) {
   .dbl-img-container {
+    width: 80%;
     margin: -2em auto;
     display: flex;
   }
   .dbl-img-container :first-child {
     margin-right: 20px;
-  }
-}
-@media (min-width: 960px) {
-  .dbl-img-container {
-    width: 80%;
   }
 }
 

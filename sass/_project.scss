@@ -109,7 +109,7 @@ img[src*=png] {
 
 .dbl-img-container.landscapes {
   @include md {
-    width: 100%;
+    width: 80%;
   }
 }
 
@@ -124,9 +124,13 @@ img[src*=png] {
 
 .dbl-img-container {
   margin: 3em auto;
-  @include sm {
+  @include xs {
     .portrait {
       width: 60%;
+      margin: 3em auto;
+    }
+    .landscape {
+      width: 80%;
       margin: 3em auto;
     }
   }
@@ -153,7 +157,7 @@ img[src*=png] {
 }
 
 .single-img-container {
-  margin: 3em 0;
+  margin: 4em 0;
   width: 100%;
   img {
     width: 100%;

@@ -66,18 +66,19 @@ type: project
 	Array.from(dblImages).forEach(container => {
 		Array.from(container.children).forEach(imgDiv => {
 			let img = imgDiv.children[0];
-			let imgOrientation = img.naturalWidth > img.naturalHeight ? "landscape" : "portrait";
-			let imgAspectRatio = (img.naturalWidth /
-				img.naturalHeight).toFixed(4);
-			imgDiv.classList.add(imgOrientation)
-			imgDiv.style.flex = imgAspectRatio;
-			console.log(imgOrientation)
-			if (container.classList.contains(imgOrientation)) {
-				container.classList.remove(imgOrientation)
-				container.classList.add(`${imgOrientation}s`);
-			} else {
-				container.classList.add(imgOrientation);
-			}
+			img.addEventListener("load", () => {
+				let imgOrientation = img.naturalWidth > img.naturalHeight ? "landscape" : "portrait";
+				let imgAspectRatio = (img.naturalWidth /
+					img.naturalHeight).toFixed(4);
+				imgDiv.classList.add(imgOrientation)
+				imgDiv.style.flex = imgAspectRatio;
+				if (container.classList.contains(imgOrientation)) {
+					container.classList.remove(imgOrientation)
+					container.classList.add(`${imgOrientation}s`);
+				} else {
+					container.classList.add(imgOrientation);
+				}
+			})
 		})
 		console.log(container);
 	})

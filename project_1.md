@@ -41,15 +41,15 @@ proposal:
 page_layout:
 -  
   - {path: "/assets/illustrations/Project_VAD_A_1_10px_Trans.png", comment:
-      "Modular plinth construction 1"}
+      ""}
   - {path: "/assets/illustrations/Project_VAD_A_2_10px_Trans.png", comment:
-      "Modular plinth construction 2"}
+      ""}
   - {path: "/assets/illustrations/Project_VAD_A_3_10px_Trans.png", comment:
-      "Modular plinth construction 3"}
+      ""}
   - {path: "/assets/illustrations/Project_VAD_A_4_30px_Trans.png", comment:
-      "Modular plinth construction 4"}
+      ""}
   - {path: "/assets/illustrations/Project_VAD_A_6_10px_Trans.png", comment:
-      "Modular plinth construction 5"}
+      ""}
   - {path: "/assets/install_1.jpeg", comment: ""}
 - text
 - 
@@ -59,7 +59,7 @@ page_layout:
       comment: ""}
 - text
 - 
-  - {path: /assets/install_2.jpeg, comment: "installed"}
+  - {path: /assets/install_2.jpeg, comment: ""}
 
 permalink: /projects/{{ title | slug }}/
 ---
@@ -91,6 +91,9 @@ varying lengths determined by simple multiples, which allows the size of the
 plinths to be scaled using any combination of the panels. After use, the plinth
 can be taken apart and efficiently stored or transported in a flat-pack form,
 before being reused.
+
+◇ To maximise future utilisation, the panels are also designed for repurposing
+into something else, for example a planter or a bookcase (see below).
 
 ---
 

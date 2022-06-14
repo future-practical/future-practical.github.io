@@ -2,6 +2,17 @@
 layout: base.njk
 type: project
 ---
+<!-- get all image data -->
+{% set allImages = [] %}
+
+{% for item in page_layout %}
+	{% if item | typeof == "object" %}
+		{% set allImages = allImages | concat(item) %}
+	{% endif %}
+{% endfor %}
+
+{% set contentSplit = content | split("<hr>")%}
+{% set contentIndex = 0 %}
 
 <img class="main-img"src="{{ main_image_path | url }}" alt="">
 
@@ -16,6 +27,8 @@ type: project
 		{% endfor %}
 	</ul>
 </div>
+
+<hr>
 
 <div class="project-synopsis">
 	<div class="container">
@@ -36,19 +49,40 @@ type: project
 	</div>
 </div>
 
-{% if gallery %}
-	{% include "img-gallery.njk" %}
-{% endif%}
+<hr>
 
-<div class="text-content">
-	{{ content | safe }}
-</div>
+{% for item in page_layout %}
 
-{% for image in images %}
-	{% if image[0] | typeof == "object" %}
-		{{ image | log }}
+	<!-- text -->
+	{% if item == "text" %}
+		<div class="text-content"> 
+			{{ contentSplit[contentIndex] | safe }}
+		</div>
+		{% set contentIndex = (contentIndex + 1) %}
+		{% if contentIndex == 2 %}
+			<hr>
+		{% endif %}
+
+	<!-- single image -->
+	{% elif item | typeof == "object" and item | length == 1 %}
+
+		{% set image = item[0] %}
+
+		<div class="img-container single-img-container">
+			<img class"single-img" onclick="galleryOn(`{{image.path | url }}`, `{{
+			image.comment }}`)" src="{{ image.path | url }}" alt="">
+			{% if image.comment %}
+				<p class="img-comment">{{ image.comment }}</p>
+			{% endif %}
+		</div>
+
+	<!-- double image -->
+	{% elif item | typeof == "object" and item | length == 2 %}
+
+		{% set images = item %}
+
 		<div class="dbl-img-container">
-			{% for i in image %}	
+			{% for i in images %}	
 				<div class="img-container dbl-img">
 					<img onclick="galleryOn(`{{i.path | url }}`, `{{
 					i.comment }}`)" src="{{ i.path | url }}" alt="">
@@ -58,15 +92,18 @@ type: project
 				</div>
 			{% endfor %}
 		</div>
-		{% else %}
-			<div class="img-container single-img-container">
-				<img class"single-img" onclick="galleryOn(`{{image.path | url }}`, `{{
-				image.comment }}`)" src="{{ image.path | url }}" alt="">
-				{% if image.comment %}
-					<p class="img-comment">{{ image.comment }}</p>
-				{% endif %}
-			</div>
+
+	<!-- image gallery -->
+	{% elif item | typeof == "object" and item | length > 2 %}
+
+		{% set gallery = item %}
+
+		{% include "img-gallery.njk" %}
+
+		<hr>
+
 	{% endif %}
+
 {% endfor%}
 
 <script>

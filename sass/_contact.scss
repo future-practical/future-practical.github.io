@@ -1,9 +1,21 @@
 #contact-wrapper {
 	margin-top: 150px;
 	@include md {
+		display: flex;
 		margin-left: 80px;
 	}
+	.contact-text {
+		margin-bottom: 3em;
+		@include md {
+			width: 450px;
+			padding-right: 100px;
+			:first-child {
+				margin: 0;
+			}
+		}
+	}
 }
+
 
 #email {
 	font-size: 1.2em;

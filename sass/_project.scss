@@ -69,10 +69,10 @@ img[src*=png] {
   width: 100%;
   overflow: scroll;
   @include xs {
-    margin: 50px 0 40px 0;
+    margin: 10px 0;
   }
   @include md {
-    margin: 60px 0;
+    margin: 20px 0;
   }
   :last-child {
     margin: 0;
@@ -168,7 +168,7 @@ img[src*=png] {
 .text-content {
   z-index: -10;
   @include xs {
-    margin: 0;
+    margin: 2em 0;
   }
   @include md {
     -moz-column-count: 2;
@@ -177,7 +177,7 @@ img[src*=png] {
     position: relative;
     column-gap: 3em;
     max-width: 1200px;
-    margin: 2em auto;
+    margin: 3em auto;
   }
   p {
     display: inline-block;

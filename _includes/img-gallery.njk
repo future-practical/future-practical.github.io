@@ -22,7 +22,6 @@
 	</div>
 </div>
 
-{% set allImages = gallery | concat(images) %}
 {% set allImagesString = allImages | stringify %}
 <script id="gallery-script" data-paths="{{ allImagesString }}">
 

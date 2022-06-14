@@ -12,4 +12,10 @@ module.exports = (eleventyCongig) => {
 	eleventyCongig.addFilter("concat", (array1, array2) => {
 		return array1.concat(array2)
 	} )
+
+	eleventyCongig.addFilter("split", (string, deliniator) => {
+		if (typeof string == "string") {
+			return string.split(deliniator);
+		}
+	} )
 }

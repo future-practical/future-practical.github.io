@@ -5,11 +5,19 @@ type: project
 
 <img class="main-img"src="{{ main_image_path | url }}" alt="">
 
-<h1 class="title">"{{ title }}"</h1>
+<h1 class="title">{{ title }}</h1>
 
-<p class="client-year">{{ client }} ({{ year }})</p>
+<p class="sub-title">{{ sub_title }}</p>
 
-<div class="project-synopsis D(f)">
+<div class="vitals">
+	<ul>
+		{% for item in vitals %}
+			<li>{{ item.key | upper }}__{{ item.value }}</li>
+		{% endfor %}
+	</ul>
+</div>
+
+<div class="project-synopsis">
 	<div class="container">
 		<p class="heading">◐ Design principles</p>
 		<ul>

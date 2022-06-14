@@ -123,8 +123,8 @@ img[src*=png] {
 }
 
 .title {
-  font-style: italic;
   font-weight: 100;
+  margin-bottom: 0;
 }
 @media (min-width: 0) {
   .title {
@@ -137,21 +137,26 @@ img[src*=png] {
   }
 }
 
-.client-year {
+.sub-title {
   font-style: italic;
-  padding-left: 1em;
 }
 @media (min-width: 0) {
-  .client-year {
-    margin: -1em 0;
+  .sub-title {
+    margin: 0;
     font-size: 0.8em;
   }
 }
 @media (min-width: 720px) {
-  .client-year {
+  .sub-title {
     font-size: 1em;
-    margin: 0;
   }
+}
+
+.vitals {
+  margin: 2.5em 0;
+}
+.vitals ul {
+  padding-left: 1em;
 }
 
 .project-synopsis {
@@ -176,10 +181,6 @@ img[src*=png] {
 }
 .project-synopsis .container ul {
   padding-left: 1em;
-  list-style: none;
-}
-.project-synopsis .container ul li {
-  margin: 0.3em 0;
 }
 
 .img-gallery::-webkit-scrollbar {
@@ -453,7 +454,7 @@ body {
   }
 }
 body p {
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 nav {
@@ -508,6 +509,14 @@ nav #links :first-child {
 }
 nav #links a:hover {
   text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  line-height: 1.5;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -2,23 +2,42 @@
 layout: project.njk
 type: project
 main_image_path: "/assets/modular-plinth-main.jpeg"
-title: Design for Our Times
-year: 2022
-client: V&A Dundee
+title: 01 Exhibition Display System
+sub_title: Investigating exhibition design practice
+vitals:
+  - key: project type
+    value: Exhibition design
+  - key: client
+    value: V&A Dundee / Design Exhibition Scotland
+  - key: current location
+    value: Dundee, UK
+  - key: date
+    value: Late 2021
+  - key: material
+    value: 6000 series aluminium
+  - key: manufacturing technique
+    value: CNC lasercutting, anodising
+  - key: production
+    value: Precision Metals (laser cutting), Northsea Coatings (anodising)
+  - key: suppliers
+    value: Kloeckner Metals UK
 principles:
-  - Simple construction.
-  - Reusable parts.
-  - Recyclable materials.
-  - Durable.
-  - Repairable / ease of maintenance.
-  - Modular design.
-  - Ease of storage.
+  - Reuse
+  - Repurpose
+  - Durability
+  - Open-design
+  - Distributed (localised) manufacturing
+  - Recyclable materials
+  - Assembly / disassembly
+  - Modularity
+  - Storable
 proposal: 
-  - Standardised panels of fixed width and varying lengths.
-  - Interlocking design. 
-  - Can be used in any combination to build different sized plinths to suit exhibits.
-  - Panels can be reused in a different exhibition configuration.
-  - Can be repurposed into other objects, e.g. a shelving system.
+  - Standardised panels of fixed width and varying lengths
+  - Interlocking design
+  - Can be used in any combination to build different sized plinths to suit exhibits
+  - Joined using standard fasteners
+  - Panels can be reused in a different exhibition configuration
+  - Can be repurposed into other objects, e.g. a shelving system
 gallery:
   - path: /assets/illustrations/Project_VAD_A_1_10px_Trans.png
     comment: "Modular plinth construction 1"
@@ -38,59 +57,64 @@ images:
     comment: "installed"
 permalink: /projects/{{ title | slug }}/
 ---
-We were approached to create a set of exhibition furniture for the current
-Design for Our Times exhibition at the V&A Dundee, where we had the
-opportunity to investigate exhibition design practise and in particular towards
-temporary displays and their associated impacts.
+◇ Temporary exhibitions typically require bespoke display elements specific to
+the exhibition design. Due to this specificity, these structures are frequently
+single use - often discarded at the end of a show as waste, where they will be
+sent to landfill or will be incinerated. A common material used in their
+construction is manufactured board (such as MDF), which emit hazardous
+chemicals into the surrounding environment.
 
-Temporary exhibitions require bespoke display elements specific to the
-exhibition design and the form and dimensions of exhibits being displayed.
-These structures are often single use due to this specificity and often end up
-being chucked in a skip at the end of the show, where they are either sent to
-landfill or are incinerated. Commonly used materials are manufactured board
-such as MDF, which we know emits toxic chemicals into their surrounding
-environment.
+◆ *How can we make exhibition practice more responsible and sustainable?*
 
-◆ *How might we make exhibition practise more responsible and sustainable?*
+◇ Our approach was to research ideas of reusability and how designing for
+circular economic principles manifest. Our aim was for the design artefacts to
+acts as a concept of how we might encounter a post-waste future, where waste
+isn’t an option and to create a visual narrative of how that might look and
+function - and in doing so, *designing out waste*.
 
-◇ Our approach was to really focus on the use of the furniture to keep it in the
-loop of use and to change it from being single use to something that could
-either be reused in future exhibitions or repurposed as something else. Also we
-are really keen on open-sourcing the design so that it may act as a prototype
-that can be iterated upon and developed by others who may benefit from this
-concept.
+◇ Our ambition was to create a reusable system that could be utilised in
+different spatial situations and exhibition environments; that could be easily
+dissembled after a show and reassembled in another context. 
 
-◇ We wanted the design to act as a concept or fiction from a post-waste future,
-where waste isn't an option and to create a visual narrative of how that might
-look and function and in doing so designing out waste.
+◇ We started by deconstructing and reframing the traditional display plinth,
+thinking about it cut into sections; as plank of material that could be
+reassembled along their edges into various configurations. 
 
-◇ We deconstructed the idea of the plinth made from MDF and thought about it cut
-into sections, as strips of material that could be joined together again along
-their edges using the universal fixing and assembled by a single person.
+◇ This led to a modular system consisting of panels of a fixed width with
+varying lengths determined by simple multiples, which allows the size of the
+plinths to be scaled using any combination of the panels. After use, the plinth
+can be taken apart and efficiently stored or transported in a flat-pack form,
+before being reused.
 
-◇ This led to a modular system consisting of panels of a fixed width with various
-lengths, determined by simple multiples, allowing the sizes of the plinths to
-be scaled using any combinations of the panels. The panels could then be
-reconfigured into different size plinths in future use cases or repurposed as
-utility furniture, for example a [bookshelf]().
+---
 
-◇ The important thing for us was that the design was intuitive and simple to
-assemble and disassemble, therefore removing any future barriers in the reuse
-of the panels.
+◇ An important consideration was that the design was simple to assemble and
+disassemble, therefore minimising future barriers in the reuse of the panels.
+The perforations act as the registration points at which the panels are joined,
+revealing the method of construction and making it a visually intuitive
+assembly process.
 
-◇ The panels needed to consist of a singular material that could be easily
-recycled at the end of its use and not made of materials that can't easily be
-separated. It was also important that the plinths functioned as well as or
-better than their single-use counterparts and could easily support heavy loads,
-whilst remaining manoeuvrable.
+◇ We wanted to celebrate fasteners as an important aspect of the ease of reuse
+and repair and how universal off-the-shelf components utilise standardised
+tools for (dis)assembly - in this case socket head screws that require the
+ubiquitous Allen key. The half-round washers drew from the  kitchen worktop
+connector,  used to connect sheet material along its edge.
 
-◇ We arrived at aluminium as a potential material for its high strength and
-durability and because it recycles within our current municipal system and it
-can be recycled time and time again without loss of material properties. 
+◇ The panels consist of a singular material in order to reduce the complexity
+of the recycling process. It was important that the plinths functioned as well
+as or better than their single-use counterparts, and could easily support heavy
+loads, whilst being manoeuvrable. We selected aluminium as a potential material
+for its high strength to weight ratio, durability and that it can be recycled
+indefinitely.
 
-◇ The design of the panels had in mind ease of manufacturing using local industry
-as well as being something that could be manufactured globally by downloading
-the production files, rather than by sending the physical parts. This meant not
-using a digital manufacturing process that is highly distributed. The parts can
-be either laser cut or water jet cut to high precision with relatively low
-costs, and in this case they were laser cut locally to us in Glasgow.
+◇ Our intention is for this project to act as a prototype to be iterated upon
+and developed by others who might benefit from this concept - such as other
+exhibition designers, gallery institutions and organisations. We believe that
+by sharing design, we can accelerate innovation towards a better future for
+people and planet. The distribution of the design means that a product can be
+manufactured locally to its point of use, rather than shipping physical
+components. To facilitate distributed manufacturing, it was important to choose
+commonly available manufacturing processes that don’t require bespoke tooling.
+Digital manufacturing is particularly suited as files can be shared online,
+dowloaded and CNC cut or 3d printed with minimal labour and therefore costs,
+making it more accessible.
